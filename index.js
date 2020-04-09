@@ -25,7 +25,7 @@ client.on("messageReactionAdd", (messageReaction, user) => {
 
         const verificationChannel = message.guild.channels.get("697785007137095750"); // The verification channel.
 
-        if(message.channel.id === verificationChannel) {
+        if(message.channel.id == verificationChannel) {
             console.log(!"3")
 
             const roleToAdd = message.guild.roles.get("697784771144712283"); // The role the bot will add to the user when they complete verification.
