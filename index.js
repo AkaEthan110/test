@@ -7,8 +7,6 @@ const fs = require('fs').promises;
 const prefix = ""; // The bot's prefix.
 
 const emoji = ""; // The emoji that the user has to press to verify themself.
-const verificationChannel = message.guild.channels.get(""); // The verification channel.
-const logs = message.guild.channels.get(""); // The logs channel.
 const message = ""; // The message which the bot will send in the verification channel.
 
 client.on("message", async message => {
@@ -32,6 +30,8 @@ client.on("messageReactionAdd", (messageReaction, user) => {
         if(message.channel.id === verificationChannel) {
             const roleToAdd = message.guild.roles.get(""); // The role the bot will add to the user when they complete verification.
             const roleToRemove = message.guild.roles.get(""); // The role the bot will remove from the user when they complete verification.
+            const verificationChannel = message.guild.channels.get(""); // The verification channel.
+            const logs = message.guild.channels.get(""); // The logs channel.
 
             message.channel.send(":white_check_mark:").then(msg => { msg.delete(3000) });
             user.send(`:white_check_mark: You have successfully verified youself in the server: \`${message.guild.name}\`!`)
