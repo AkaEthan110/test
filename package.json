@@ -1,17 +1,22 @@
 {
-    "name": "captcha-bot",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "discord.js": "^12.1.1",
-      "dotenv": "^8.2.0",
-      "jimp": "^0.10.0"
-    }
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkaEthan110/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkaEthan110/test/issues"
+  },
+  "homepage": "https://github.com/AkaEthan110/test#readme",
+  "dependencies": {
+    "discord.js": "^11.5.2"
   }
+}
