@@ -9,8 +9,6 @@ const emoji = "✅"; // The emoji that the user has to press to verify themself.
 const messageToSend = "Hello! :slight_smile:"; // The message which the bot will send in the verification channel.
 
 client.on("message", async message => {
-    if(user === bot.user) return;
-
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
