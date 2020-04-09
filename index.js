@@ -1,5 +1,10 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const client = new Discord.Client({ disableEveryone: "true" });
+const { config } = require("dotenv");
+
+config({
+    path: __dirname + "/.env"
+});
 
 const createCaptcha = require('./captcha');
 const fs = require('fs').promises;

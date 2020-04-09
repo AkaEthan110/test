@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/AkaEthan110/test#readme",
   "dependencies": {
-    "discord.js": "^11.5.2",
+    "discord.js": "^11.6.4",
+    "dotenv": "^8.2.0",
     "jimp": "^0.10.1"
   }
 }
