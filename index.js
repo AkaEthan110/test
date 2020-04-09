@@ -6,7 +6,7 @@ const fs = require('fs').promises;
 
 const prefix = "-"; // The bot's prefix.
 const emoji = "✅"; // The emoji that the user has to press to verify themself.
-const message = "Hello! :slight_smile:"; // The message which the bot will send in the verification channel.
+const messageToSend = "Hello! :slight_smile:"; // The message which the bot will send in the verification channel.
 
 client.on("message", async message => {
     if(user === bot.user) return;
@@ -15,7 +15,7 @@ client.on("message", async message => {
     const command = args.shift().toLowerCase();
 
     if(command === "sendMessage") {
-        message.channel.send(message).then(message => {
+        message.channel.send(messageToSend).then(message => {
             message.react(emoji);
         });
     }
@@ -39,6 +39,10 @@ client.on("messageReactionAdd", (messageReaction, user) => {
             logs.send(`${user.tag} has successfully verified themself!`)
         }
     } 
+});
+
+client.on("ready", async () => {
+    console.log("Ready!")
 });
 
 client.login("NjgwMDAwODY3OTgxOTgzNzgz.Xo50vw.xqSTW8Qi37UTVDl0jT9nUCZb654");
