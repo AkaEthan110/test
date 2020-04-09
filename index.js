@@ -4,7 +4,7 @@ const client = new Discord.Client({ disableEveryone: true });
 const createCaptcha = require('./captcha');
 const fs = require('fs').promises;
 
-client.on('guildMemberAdd', async member => {
+client.on('guildMemberAdd', async (guild, member) => {
     const time = 120; // How many seconds the user has to solve the captcha.
     const logs = client.channels.get("697557759868272841"); // The channel ID of where all logs are sent.
     const role = client.roles.get(""); // The role ID that is given when a user completes the captcha.
