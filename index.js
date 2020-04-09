@@ -4,15 +4,11 @@ const client = new Discord.Client({ disableEveryone: true });
 const createCaptcha = require('./captcha');
 const fs = require('fs').promises;
 
-const prefix = "-"; // The bot's prefix.
 const emoji = "✅"; // The emoji that the user has to press to verify themself.
 const messageToSend = "Hello! :slight_smile:"; // The message which the bot will send in the verification channel.
 
 client.on("message", async message => {
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-
-    if(command === "sendMessage") {
+    if(message.content === "-sendMessage") {
         message.channel.send(messageToSend).then(message => {
             message.react(emoji);
         });
