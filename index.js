@@ -47,4 +47,4 @@ client.on("ready", async () => {
     console.log("Ready!")
 });
 
-client.login("NjgwMDAwODY3OTgxOTgzNzgz.Xo50vw.xqSTW8Qi37UTVDl0jT9nUCZb654");
+client.login("BOT TOKEN");
