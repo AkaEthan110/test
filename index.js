@@ -4,11 +4,10 @@ const client = new Discord.Client({ disableEveryone: true });
 const createCaptcha = require('./captcha');
 const fs = require('fs').promises;
 
-const emoji = "✅"; // The emoji that the user has to press to verify themself.
-const messageToSend = "Hello! :slight_smile:"; // The message which the bot will send in the verification channel.
-
 client.on("message", async message => {
     if(message.content === "-sendMessage") {
+        const messageToSend = "Hello! :slight_smile:"; // The message which the bot will send in the verification channel.
+
         message.channel.send(messageToSend).then(message => {
             message.react(emoji);
         });
@@ -19,7 +18,9 @@ client.on("messageReactionAdd", (messageReaction, user) => {
     if(user.bot) return;
     const { message, emoji } = messageReaction;
     
-    if(emoji.name === emoji) {
+    const emojiCheck = "✅"; // The emoji that the user has to press to verify themself.
+
+    if(emoji.name === emojiCheck) {
         if(message.channel.id === verificationChannel) {
             const roleToAdd = message.guild.roles.get("697784771144712283"); // The role the bot will add to the user when they complete verification.
             const roleToRemove = message.guild.roles.get("697784789263974452"); // The role the bot will remove from the user when they complete verification.
