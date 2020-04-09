@@ -32,6 +32,8 @@ client.on("messageReactionAdd", (messageReaction, user) => {
             const roleToRemove = message.guild.roles.get("697784789263974452"); // The role the bot will remove from the user when they complete verification.
             const logs = message.guild.channels.get("697783934653825075"); // The logs channel.
 
+            console.log("3")
+
             message.channel.send(":white_check_mark:").then(msg => { msg.delete(3000) });
             user.send(`:white_check_mark: You have successfully verified youself in the server: \`${message.guild.name}\`!`)
             user.addRole(roleToAdd.id);
