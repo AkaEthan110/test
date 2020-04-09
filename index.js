@@ -5,12 +5,18 @@ const createCaptcha = require('./captcha');
 const fs = require('fs').promises;
 
 client.on('guildMemberAdd', async (guild, member) => {
+    console.log("1")
+
     const time = 120; // How many seconds the user has to solve the captcha.
     const logs = guild.channels.get("697557759868272841"); // The channel ID of where all logs are sent.
     const role = guild.roles.get(""); // The role ID that is given when a user completes the captcha.
     const role2 = guild.roles.get(""); // The role ID that is removed when a user completes the captcha.
 
+    console.log("2")
+
     logs.send(`${member.tag} has joined the server and has ${time} seconds to solve the captcha which I sent to their DMs!`);
+
+    console.log("3")
 
     const captcha = await createCaptcha();
     try {
