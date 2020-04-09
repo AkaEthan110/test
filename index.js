@@ -12,6 +12,7 @@ client.on("message", async message => {
 
         const a = await message.channel.send(messageToSend);
         a.react(emojiCheck);
+        return;
     }
 });
 
@@ -23,12 +24,13 @@ client.on("messageReactionAdd", (messageReaction, user) => {
     if(emoji.name === emojiCheck) {
         console.log("2")
 
+        const verificationChannel = message.guild.channels.get("697785007137095750"); // The verification channel.
+
         if(message.channel.id === verificationChannel) {
             console.log(!"3")
 
             const roleToAdd = message.guild.roles.get("697784771144712283"); // The role the bot will add to the user when they complete verification.
             const roleToRemove = message.guild.roles.get("697784789263974452"); // The role the bot will remove from the user when they complete verification.
-            const verificationChannel = message.guild.channels.get("697785007137095750"); // The verification channel.
             const logs = message.guild.channels.get("697783934653825075"); // The logs channel.
 
             message.channel.send(":white_check_mark:").then(msg => { msg.delete(3000) });
