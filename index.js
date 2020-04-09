@@ -1,3 +1,6 @@
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
 const createCaptcha = require('./captcha');
 const fs = require('fs').promises;
 client.login(process.env.BOT_TOKEN);
