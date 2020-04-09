@@ -11,8 +11,7 @@ client.on("message", async message => {
         const messageToSend = "Hello! :slight_smile:"; // The message which the bot will send in the verification channel.
 
         const a = await message.channel.send(messageToSend);
-        a.react(emojiCheck);
-        return;
+        return a.react(emojiCheck);
     }
 });
 
