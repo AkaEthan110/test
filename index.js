@@ -8,7 +8,6 @@ config({
 
 const createCaptcha = require('./captcha');
 const fs = require('fs').promises;
-client.login(process.env.BOT_TOKEN);
 
 client.on('guildMemberAdd', async member => {
     const time = 120; // How many seconds the user has to solve the captcha.
@@ -60,3 +59,4 @@ client.on('guildMemberAdd', async member => {
     }
 });
 
+client.login(process.env.BOT_TOKEN);
