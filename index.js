@@ -1,10 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client({ disableEveryone: true });
-const { config } = require("dotenv");
-
-config({
-    path: __dirname + "/.env"
-});
 
 const createCaptcha = require('./captcha');
 const fs = require('fs').promises;
@@ -59,4 +54,4 @@ client.on('guildMemberAdd', async member => {
     }
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login("NjgwMDAwODY3OTgxOTgzNzgz.Xo50vw.xqSTW8Qi37UTVDl0jT9nUCZb654");
