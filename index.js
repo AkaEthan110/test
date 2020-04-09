@@ -4,13 +4,13 @@ const client = new Discord.Client({ disableEveryone: true });
 const createCaptcha = require('./captcha');
 const fs = require('fs').promises;
 
-client.on('guildMemberAdd', async (guild, member) => {
+client.on('guildMemberAdd', async member => {
     console.log("1")
 
     const time = 120; // How many seconds the user has to solve the captcha.
-    const logs = guild.channels.get("697557759868272841"); // The channel ID of where all logs are sent.
-    const role = guild.roles.get(""); // The role ID that is given when a user completes the captcha.
-    const role2 = guild.roles.get(""); // The role ID that is removed when a user completes the captcha.
+    const logs = member.guild.channels.get("697557759868272841"); // The channel ID of where all logs are sent.
+    const role = member.guild.roles.get(""); // The role ID that is given when a user completes the captcha.
+    const role2 = member.guild.roles.get(""); // The role ID that is removed when a user completes the captcha.
 
     console.log("2")
 
