@@ -4,12 +4,15 @@ const client = new Discord.Client({ disableEveryone: true });
 const createCaptcha = require('./captcha');
 const fs = require('fs').promises;
 
+const emojiCheck = "✅"; // The emoji that the user has to press to verify themself.
+
 client.on("message", async message => {
     if(message.content === "-sendMessage") {
         const messageToSend = "Hello! :slight_smile:"; // The message which the bot will send in the verification channel.
 
         message.channel.send(messageToSend).then(message => {
-            message.react(emoji);
+            message.react(emojiCheck);
+            return;
         });
     }
 });
@@ -17,8 +20,7 @@ client.on("message", async message => {
 client.on("messageReactionAdd", (messageReaction, user) => {
     if(user.bot) return;
     const { message, emoji } = messageReaction;
-    
-    const emojiCheck = "✅"; // The emoji that the user has to press to verify themself.
+
     console.log("1")
     if(emoji.name === emojiCheck) {
         console.log("2")
