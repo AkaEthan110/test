@@ -10,10 +10,8 @@ client.on("message", async message => {
     if(message.content === "-sendMessage") {
         const messageToSend = "Hello! :slight_smile:"; // The message which the bot will send in the verification channel.
 
-        message.channel.send(messageToSend).then(message => {
-            message.react(emojiCheck);
-            return;
-        });
+        const a = await message.channel.send(messageToSend);
+        a.react(emojiCheck);
     }
 });
 
@@ -24,8 +22,10 @@ client.on("messageReactionAdd", (messageReaction, user) => {
     console.log("1")
     if(emoji.name === emojiCheck) {
         console.log("2")
+
         if(message.channel.id === verificationChannel) {
             console.log(!"3")
+
             const roleToAdd = message.guild.roles.get("697784771144712283"); // The role the bot will add to the user when they complete verification.
             const roleToRemove = message.guild.roles.get("697784789263974452"); // The role the bot will remove from the user when they complete verification.
             const verificationChannel = message.guild.channels.get("697785007137095750"); // The verification channel.
